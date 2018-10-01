@@ -6,6 +6,8 @@ import java.util.List;
 public class Money {
     private String currencyName;
     private double amount;
+
+    //тут список всех возможных валют скорее всего не в кассу, я сейчас думаю, можно попробовать его перенести в User
     private List<Money> currencys = new ArrayList<>();
 
     public Money(String currencyName, double amount) {
