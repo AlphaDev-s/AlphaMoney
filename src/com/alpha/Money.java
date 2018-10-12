@@ -1,25 +1,14 @@
 package com.alpha;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class Money {
-    private String currencyName;
-    private double amount;
+public class Money  {
 
-    //тут список всех возможных валют
-    private List<Money> currencys = new ArrayList<>();
+    private Currency currency;
+    private String amount;
 
-    public Money(String currencyName, double amount) {
-        this.currencyName = currencyName;
+    public Money(Currency currency, String amount) {
+        this.currency = currency;
         this.amount = amount;
     }
 
-    public List<Money> getCurrencys() {
-        return currencys;
-    }
-
-    public void addCurrency(Money currencyName) {
-        currencys.add(currencyName);
-    }
 }
