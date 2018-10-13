@@ -5,23 +5,60 @@ import java.util.List;
 
 public class Account {
     private int accountNumber;
+    // TODO: accountOpeningDate;
+    // TODO: accountClosingDate;
+    private double accountOwnerUID;  // основной владелец
+    private double accountAdditionalUserUID;  // дополнительный пользователь
+    private int accountCurrencyID;  // валюта счета
+    private String accInitialBalance;  // начальный остаток
+    private String accClosingBalance;  // остаток при закрытия счета
+    private String accountStatus;  // статус счета
     private String accountType;
-    private String accountCurrency;
 
-    //список всех аккаунтов
-    private List<Account> accountList = new ArrayList<>();
-
-    public Account(int accountNumber, String accountType, String accountCurrency) {
+    public Account(int accountNumber, double accountOwnerUID) {
         this.accountNumber = accountNumber;
-        this.accountType = accountType;
-        this.accountCurrency = accountCurrency;
+        this.accountOwnerUID = accountOwnerUID;
     }
 
-    public List<Account> getAccountList() {
-        return accountList;
+
+    public double getAccountAdditionalUserUID() {
+        return accountAdditionalUserUID;
     }
 
-    public void addAccount(Account account) {
-        accountList.add(account);
+    public void setAccountAdditionalUserUID(double accountAdditionalUserUID) {
+        this.accountAdditionalUserUID = accountAdditionalUserUID;
     }
+
+    public int getAccountCurrencyID() {
+        return accountCurrencyID;
+    }
+
+    public void setAccountCurrencyID(int accountCurrencyID) {
+        this.accountCurrencyID = accountCurrencyID;
+    }
+
+    public String getAccInitialBalance() {
+        return accInitialBalance;
+    }
+
+    public void setAccInitialBalance(String accInitialBalance) {
+        this.accInitialBalance = accInitialBalance;
+    }
+
+    public String getAccClosingBalance() {
+        return accClosingBalance;
+    }
+
+    public void setAccClosingBalance(String accClosingBalance) {
+        this.accClosingBalance = accClosingBalance;
+    }
+
+    public String getAccountStatus() {
+        return accountStatus;
+    }
+
+    public void setAccountStatus(String accountStatus) {
+        this.accountStatus = accountStatus;
+    }
+
 }

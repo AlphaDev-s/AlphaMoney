@@ -3,28 +3,38 @@ package com.alpha;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * класс описывающий всех пользователей
+ * от него долны наследоваться конкретные классы описывающие пользователей: внешние, внутренние
+ */
 public abstract class User {
 
     private double UID;  // уникальный идентификатор
-    private String firstName;
-    private String lastName;
-    private String middleName;
-    private char   Gender;
+    private String firstName;   // имя
+    private String lastName;    // фамилия
+    private String middleName;  // отчество
+    private char   Gender;      // пол
+    // TODO: добавить дату рождения в формате DD.MM.YYYY
+
+    /**
+     * у каждого пользователя может быть несколько аккаунтов в системе
+     */
     private Map<String, Account> accountList = new HashMap<>();                // массив всех аккаунтов пользователя
+
+    /**
+     * ДУЛ может быть несколько - разных типов или сроков действия
+     */
     private Map<String, IdentificationDocument> identificationDocumentList = new HashMap<>();  // массив всех документов
+
+    /**
+     * все адреса связанные с пользователем - регистрации, остальные
+     */
     private Map<String, ResidentialAddress> residentialAddressList = new HashMap<>();      // массив всех адресов
     private String currentAddressID;                    // текущий адрес
 
     public void setUID(double uid) {
         this.UID = uid;
 
-    //это типа аккаунты конкретного пользователя?
-    private List<String> accountList;
-    //Что это?
-    private List<String> identificationDocumentList;
-    private List<String> residentialAddressList;
-
-    // а это вариант, чтобы служащий банка мог все менть в офисе. так?
     public double getUID() {
         return UID;
     }
