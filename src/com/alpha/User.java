@@ -1,61 +1,28 @@
 package com.alpha;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class User {
+public abstract class User {
+
+    private double UID;  // уникальный идентификатор
     private String firstName;
     private String lastName;
     private String middleName;
-    private String currentAddress;
-    private double UID;
-    private String userType;
+    private char   Gender;
+    private Map<String, Account> accountList = new HashMap<>();                // массив всех аккаунтов пользователя
+    private Map<String, IdentificationDocument> identificationDocumentList = new HashMap<>();  // массив всех документов
+    private Map<String, ResidentialAddress> residentialAddressList = new HashMap<>();      // массив всех адресов
+    private String currentAddressID;                    // текущий адрес
 
-    private int accountNumber;
-
-    //login & password предлагаю оставить
-    private String login;
-    private String password;
-
-    //где-то все юзеры должны храниться это кастыль пока нет БД
-    //где он будет храниться?
-    //private List<User> userList = new ArrayList<>();
+    public void setUID(double uid) {
+        this.UID = uid;
 
     //это типа аккаунты конкретного пользователя?
     private List<String> accountList;
     //Что это?
     private List<String> identificationDocumentList;
     private List<String> residentialAddressList;
-
-
-    //предлагаю другую реализацию конструктора без параметров:
-    //этот авторег не будет рабьотать сразу пока пользователь не заполнит свои и данные и непройдет верификацию
-    public User() {
-        this.firstName = "";
-        this.lastName = "";
-        this.middleName = "";
-        this.currentAddress = "";
-        this.userType = "1";//это параметр может использоваться если ЮР или ФИЗ лицо например
-        this.UID = (0 + (int) (Math.random() * 1000000000));//Math.random возвращает не целые числа, а 0.05546919624573865, предлагаю целые числа
-        this.accountNumber = 0; // это параметр нужен для привязки юзер к счету
-        this.login = "user"; // эти параметры инициализируются и юзеру предлагается сменить логин и парол сразу.
-        // чуть позже напишу генератор логинов и паролей
-        this.password = "12345";
-    }
-
-    // есть вариант где все данные будет заполнять служащий банка
-    public User(String firstName, String lastName, String middleName, String currentAddress,
-                double UID, String userType, int accountNumber, String login, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleName = middleName;
-        this.currentAddress = currentAddress;
-        this.UID = UID;
-        this.userType = userType;
-        this.accountNumber = accountNumber;
-        this.login = login;
-        this.password = password;
-    }
 
     // а это вариант, чтобы служащий банка мог все менть в офисе. так?
     public double getUID() {
@@ -79,9 +46,45 @@ public class User {
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
-    public String getCurrentAddress() {
-        return currentAddress;
+
+    public void setGender(char Gender) {
+        this.Gender = Gender;
     }
 
+    public char getGender() {
+        return Gender;
+    }
+
+    public void setAccountList(String id, Account account) {
+        this.accountList.put(id, account);
+    }
+
+    public Account getAccountList(String id) {
+        return accountList.get(id);
+    }
+
+    public void setIdentificationDocumentList(String id, IdentificationDocument identificationDocument) {
+        this.identificationDocumentList.put(id, identificationDocument);
+    }
+
+    public IdentificationDocument getIdentificationDocumentList(String id) {
+        return identificationDocumentList.get(id);
+    }
+
+    public void setResidentialAddressList(String id, ResidentialAddress residentialAddress) {
+        this.residentialAddressList.put(id, residentialAddress);
+    }
+
+    public ResidentialAddress getResidentialAddressList(String id) {
+        return residentialAddressList.get(id);
+    }
+
+    public void setCurrentAddress(String id) {
+        this.currentAddressID = id;
+    }
+
+    public String getCurrentAddressID() {
+        return currentAddressID;
+    }
 
 }
