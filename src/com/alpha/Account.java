@@ -1,5 +1,6 @@
 package com.alpha;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
@@ -12,6 +13,7 @@ public class Account {
     private String accInitialBalance;  // начальный остаток
     private String accClosingBalance;  // остаток при закрытия счета
     private String accountStatus;  // статус счета
+    private String accountType;
 
     public Account(int accountNumber, double accountOwnerUID) {
         this.accountNumber = accountNumber;
@@ -58,4 +60,5 @@ public class Account {
     public void setAccountStatus(String accountStatus) {
         this.accountStatus = accountStatus;
     }
+
 }

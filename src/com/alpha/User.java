@@ -34,32 +34,25 @@ public abstract class User {
 
     public void setUID(double uid) {
         this.UID = uid;
-    }
 
     public double getUID() {
         return UID;
     }
-
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public String getMiddleName() {
         return middleName;
     }
-
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
@@ -103,4 +96,5 @@ public abstract class User {
     public String getCurrentAddressID() {
         return currentAddressID;
     }
+
 }
