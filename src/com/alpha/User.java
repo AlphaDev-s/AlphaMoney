@@ -17,32 +17,32 @@ public abstract class User {
 
     public void setUID(double uid) {
         this.UID = uid;
-    }
 
+    //это типа аккаунты конкретного пользователя?
+    private List<String> accountList;
+    //Что это?
+    private List<String> identificationDocumentList;
+    private List<String> residentialAddressList;
+
+    // а это вариант, чтобы служащий банка мог все менть в офисе. так?
     public double getUID() {
         return UID;
     }
-
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public String getMiddleName() {
         return middleName;
     }
-
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
@@ -86,4 +86,5 @@ public abstract class User {
     public String getCurrentAddressID() {
         return currentAddressID;
     }
+
 }
