@@ -2,7 +2,7 @@ package com.alpha;
 
 public class MoneyOperations {
 
-    public static String summ (String x, String y){
+    public String summ (String x, String y){
         System.out.println();
         System.out.println("x " + x);
         System.out.println("y " + y);
@@ -51,7 +51,7 @@ public class MoneyOperations {
         return null;
     }
 
-    public static String subtract (String x, String y){
+    public String subtract (String x, String y){
         System.out.println();
         System.out.println("x " + x);
         System.out.println("y " + y);
@@ -100,7 +100,7 @@ public class MoneyOperations {
         return null;
     }
 
-    public static String multiply (String x, String y){
+    public String multiply (String x, String y){
         System.out.println();
         System.out.println("x " + x);
         System.out.println("y " + y);
@@ -149,7 +149,7 @@ public class MoneyOperations {
         return null;
     }
 
-    public static String division (String x, String y){
+    public String division (String x, String y){
         System.out.println();
         System.out.println("x " + x);
         System.out.println("y " + y);

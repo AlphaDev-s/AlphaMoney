@@ -3,6 +3,7 @@ package com.alpha;
 import java.util.HashMap;
 import java.util.Map;
 
+
 /**
  * класс описывающий всех пользователей
  * от него долны наследоваться конкретные классы описывающие пользователей: внешние, внутренние
@@ -34,7 +35,7 @@ public abstract class User {
 
     public void setUID(double uid) {
         this.UID = uid;
-
+    }
     public double getUID() {
         return UID;
     }

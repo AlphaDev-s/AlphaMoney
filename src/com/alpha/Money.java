@@ -1,7 +1,7 @@
 package com.alpha;
 
 
-public class Money  {
+public class Money {
 
     private Currency currency;
     private String amount;
@@ -11,4 +11,11 @@ public class Money  {
         this.amount = amount;
     }
 
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public String getAmount() {
+        return amount;
+    }
 }

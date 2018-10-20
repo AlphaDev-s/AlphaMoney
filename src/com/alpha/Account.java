@@ -15,6 +15,24 @@ public class Account {
     private String accountStatus;  // статус счета
     private String accountType;
 
+    //для возможности проведния операций добавляем сюда класс Money
+    private Money money;
+
+    public Money getMoney() {
+        return money;
+    }
+
+    public void setMoney(Money money) {
+        this.money = money;
+    }
+
+    public Account(int accountNumber, double accountOwnerUID, Money money) {
+        this.accountNumber = accountNumber;
+        this.accountOwnerUID = accountOwnerUID;
+        this.money = money;
+    }
+
+
     public Account(int accountNumber, double accountOwnerUID) {
         this.accountNumber = accountNumber;
         this.accountOwnerUID = accountOwnerUID;
