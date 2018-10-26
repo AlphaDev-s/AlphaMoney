@@ -1,27 +1,43 @@
 package com.alpha;
 
 public class Transaction {
-    private Account account;
-    private MoneyOperations moneyOperations = new MoneyOperations();
+    private Account fromAccount;
+    private Account toAccount;
+    private TransactionType transactionType;
+    private Money moneyAmount;
+    private ExchangeRate exchangeRate;
 
-    public Account getAccount() {
-        return account;
+
+    public Transaction(Account fromAccount, Account toAccount, TransactionType transactionType, Money amount, ExchangeRate exchangeRate) {
+        this.fromAccount = fromAccount;
+        this.toAccount = toAccount;
+        this.transactionType = transactionType;
+        this.moneyAmount = amount;
+        this.exchangeRate = exchangeRate;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public Transaction(Account fromAccount, Account toAccount, TransactionType transactionType, Money moneyAmount) {
+        this.fromAccount = fromAccount;
+        this.toAccount = toAccount;
+        this.transactionType = transactionType;
+        this.moneyAmount = moneyAmount;
+        this.exchangeRate = null;
     }
-    //добавить деньги на счет
-    public void transactionAddMoney(Account account1){
-        if (this.account.getMoney().getCurrency()==account1.getMoney().getCurrency()) {
-            moneyOperations.summ(this.account.getMoney().getAmount(), account1.getMoney().getAmount());
-        }
+
+    public Account getFromAccount() {
+        return fromAccount;
     }
-    //снять деньги со счета
-    public void transactionSubtractMoney(Account account1){
-        if (this.account.getMoney().getCurrency()==account1.getMoney().getCurrency()) {
-            moneyOperations.subtract(this.account.getMoney().getAmount(), account1.getMoney().getAmount());
-        }
+
+    public Account getToAccount() {
+        return toAccount;
+    }
+
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    public Money getMoneyAmount() {
+        return moneyAmount;
     }
 
 

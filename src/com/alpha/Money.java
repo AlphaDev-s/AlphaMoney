@@ -4,9 +4,9 @@ package com.alpha;
 public class Money {
 
     private Currency currency;
-    private String amount;
+    private Long amount;
 
-    public Money(Currency currency, String amount) {
+    public Money(Currency currency, Long amount) {
         this.currency = currency;
         this.amount = amount;
     }
@@ -15,7 +15,8 @@ public class Money {
         return currency;
     }
 
-    public String getAmount() {
+    public Long getAmount() {
         return amount;
     }
+
 }
